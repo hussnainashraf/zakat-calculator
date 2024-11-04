@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    !<body>
+
+
+        <h1>Zakat Calculator</h1>
+        <label for="wealth">Total Wealth (in your currency):</label>
+        <input type="number" id="wealth" placeholder="Enter your total wealth" required>
+        <button onclick="calculateZakat()">Calculate Zakat</button>
+    
+        <div class="result" id="result"></div>
+    
+        <script>
+            function calculateZakat() {
+                const wealth = parseFloat(document.getElementById('wealth').value);
+                const zakatRate = 0.025; // 2.5%
+                if (isNaN(wealth) || wealth < 0) {
+                    document.getElementById('result').innerText = "Please enter a valid amount.";
+                    return;
+                }
+                const zakat = wealth * zakatRate;
+                document.getElementById('result').innerText = `Zakat Due: ${zakat.toFixed(2)}`;
+            }
+        </script>
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
